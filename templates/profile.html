@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Профиль</title>
+    <style>
+        body {
+            background-color: #F0EAD6;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 50px;
+        }
+
+        .profile {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 5px;
+            width: 400px;
+            margin-right: 30px;
+        }
+
+        .profile h2 {
+            color: #8B8378;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile .user-info {
+            color: #8B8378;
+            margin-bottom: 20px;
+        }
+
+        .profile .user-info span {
+            display: block;
+        }
+
+        .profile .user-info .label {
+            font-weight: bold;
+        }
+
+        .profile .user-surveys {
+            color: #8B8378;
+        }
+
+        .profile .user-surveys a {
+            color: #8B8378;
+            text-decoration: none;
+        }
+
+        .profile .user-surveys a:hover {
+            text-decoration: underline;
+        }
+
+        .profile .user-results {
+            color: #8B8378;
+            margin-top: 20px;
+        }
+
+        .logout-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .logout-button a {
+            color: #8B8378;
+            text-decoration: none;
+        }
+
+        .logout-button a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <div class="logout-button">
+                <a href="{{ url_for('login.logout') }}">Выйти</a>
+            </div>
+            <h2>Профиль</h2>
+            <div class="user-info">
+                <span class="label">Имя пользователя:</span>
+                <span>{{ data.user.username }}</span>
+                <span class="label">Email:</span>
+                <span>{{ data.user.email }}</span>
+                <span class="label">Дата создания:</span>
+                <span>{{ data.user.created_at }}</span>
+            </div>
+            <div class="user-surveys">
+                <a href="{{ url_for('profile.user_surveys') }}">Все мои опросы</a>: {{ data.total_surveys }}
+            </div>
+            <div class="user-results">
+                Опросы, в которых я участвовал: {{ data.total_results }}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

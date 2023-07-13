@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Авторизация</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #F0EAD6;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form {
+      background-color: #FFFFFF;
+      padding: 20px;
+      border-radius: 5px;
+      width: 320px;
+      text-align: center;
+    }
+
+    .form h2 {
+      color: #8B8378;
+      margin-bottom: 20px;
+    }
+
+    .form input[type="text"],
+    .form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #8B8378;
+    }
+
+    .form input[type="submit"] {
+      background-color: #8B8378;
+      color: #FFFFFF;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .form input[type="submit"]:hover {
+      background-color: #6D645B;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form class="form" action="/login.login" method="post">
+      <h2>Авторизация</h2>
+      <input type="text" name="login" placeholder="Логин" required>
+      <input type="password" name="password" placeholder="Пароль" required>
+      <input type="submit" value="Войти">
+    </form>
+  </div>
+</body>
+</html>

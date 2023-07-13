@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Опросы пользователя</title>
+</head>
+<body>
+    <h1>Опросы пользователя</h1>
+    {% if surveys %}
+        <ul>
+            {% for survey in surveys %}
+                <li>{{ survey.title }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>У пользователя нет доступных опросов</p>
+    {% endif %}
+</body>
+</html>

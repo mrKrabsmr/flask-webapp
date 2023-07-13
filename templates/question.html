@@ -1,0 +1,26 @@
+<!-- question.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Question</title>
+</head>
+<body>
+    <h1>Survey Question</h1>
+    {% if data %}
+    <form method="POST" action="{{ url_for('survey.start_survey', pk=data.survey_id, page=page) }}">
+        <h2>{{ data.question }}</h2>
+        {% if error %}
+        <p>{{ error }}</p>
+        {% endif %}
+        <div>
+            {% for option in data.options %}
+            <input type="radio" name="answer" value="{{ option }}">{{ option }}<br>
+            {% endfor %}
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+    {% else %}
+    <p>No question available.</p>
+    {% endif %}
+</body>
+</html>
